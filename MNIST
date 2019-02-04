@@ -1,0 +1,7 @@
+# readable and binary 
+open(filename, "rb")
+# Each column represents one 28x28 pixel image (784 total pixels) that has
+# been "unrolled" into a 784-element column vector.
+
+# initialize weights
+r = numpy.sqrt(6) / numpy.sqrt(hidden_size + visible_size + 1)
