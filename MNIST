@@ -3,5 +3,15 @@ open(filename, "rb")
 # Each column represents one 28x28 pixel image (784 total pixels) that has
 # been "unrolled" into a 784-element column vector.
 
-# initialize weights
+# initialize weights in  [-r,r]
 r = numpy.sqrt(6) / numpy.sqrt(hidden_size + visible_size + 1)
+
+# check grad is correct, then train with 
+scipy.optimize.minimize(J, theta, method='L-BFGS-B', jac=True, options=options_)
+
+# Autoencoders and Sparsity
+# Autoencoders: unsupervised learning with y = x
+# small number in hidden layer can find interesting structure in input
+# large number in hidden layer can still find it with sparsity: some inactive
+ #sparsity parameter close to 0 means the average activation of each hidden neuron j close to 0
+ Kullback-Leibler(KL) divergence Dkl(P||Q)=\sum_x P(x) log P(x)/Q(x)
