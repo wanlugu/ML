@@ -1,0 +1,11 @@
+#processEmail
+# lower case, strip html, email address, numbers, urls, $sign
+lower, regexprep: Replace occurrences of pattern in string
+#Tokenization
+strtok(str, delemiters) #parses str from left to right, treats each character in delimiters as a separate delimiter 
+regexprep(str, '[^a-zA-Z0-9]', '') #Remove any non alphanumeric characters
+
+# vocabList
+strcmp() # compare text then add word indices if in list
+# constract features
+# SVMTrain
