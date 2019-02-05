@@ -7,5 +7,5 @@ regexprep(str, '[^a-zA-Z0-9]', '') #Remove any non alphanumeric characters
 
 # vocabList
 strcmp() # compare text then add word indices if in list
-# constract features
+# construct feature vectors
 # SVMTrain
