@@ -5,8 +5,23 @@ open(filename, "rb")
 
 # initialize weights in  [-r,r]
 r = numpy.sqrt(6) / numpy.sqrt(hidden_size + visible_size + 1)
-
-# check grad is correct, then train with 
+# Forward propagation with initial values
+generate cost function and delta
+# use back propogation to compute grad of w,b
+# the error term for output layer
+    delta3 = -(data - h) * f_prime(z3)
+    # the error term for the hidden layer (layer 2)
+    delta2 = W2.transpose().dot(delta3)  * f_prime(z2)
+    # the gradient for W1,W2, b1, b2
+    W1grad = delta2.dot(data.transpose()) / m + lambda_ * W1
+    W2grad = delta3.dot(a2.transpose()) / m + lambda_ * W2
+    b1grad = numpy.sum(delta2, axis=1) / m
+    b2grad = numpy.sum(delta3, axis=1) / m
+    
+# check grad is correct or not by comparing with numerical grad f(x+)-f(x-) /(2 * epsilon) ,
+# J = lambda x: utils.autoencoder_cost_and_grad(x, visible_size, hidden_size, lambda_, patches_train)
+# J[0] is the cost given x=theta
+# then train with 
 scipy.optimize.minimize(J, theta, method='L-BFGS-B', jac=True, options=options_)
 
 # Autoencoders and Sparsity
@@ -15,3 +30,8 @@ scipy.optimize.minimize(J, theta, method='L-BFGS-B', jac=True, options=options_)
 # large number in hidden layer can still find it with sparsity: some inactive
  #sparsity parameter close to 0 means the average activation of each hidden neuron j close to 0
  Kullback-Leibler(KL) divergence Dkl(P||Q)=\sum_x P(x) log P(x)/Q(x)
+sparsity_delta = numpy.tile(- rho/ rho_hat + (1 - rho) / (1 - rho_hat), (m, 1)).transpose()
+# the error term for output layer
+    delta3 = -(data - h) * f_prime(z3)
+    # the error term for the hidden layer (layer 2)
+    delta2 = (W2.transpose().dot(delta3) + beta_* sparsity_delta) * f_prime(z2)
