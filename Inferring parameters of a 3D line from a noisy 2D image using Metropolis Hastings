@@ -1,1 +1,10 @@
 3D point p=[p1,p2,p3], its 2D image q = [u, v]
+homogeneous coordinates M[p1,p2,p3,1] = [uu , vv, ww], q=1/ww [uu,vv]
+
+A 3D line l = (p_i, p_f) project through camera M as l2d = (q_i, q_f)
+noise has beed added to q_m with \epsilon to generate noised point r_m
+Then, distirbution  
+1.  r_s|p_i,p_f,t_s,\Sigma ~ N(q_s, \Sigma), q_s = q_i +(q_f-q_i)t_s
+Additionally add noise to 3D line,
+2.  p_i,p_f~N(\mu_1,\Sigma_1)
+Use 1.2. to generate 3D line
