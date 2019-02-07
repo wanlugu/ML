@@ -1,11 +1,24 @@
 #processEmail
 # lower case, strip html, email address, numbers, urls, $sign
 lower, regexprep: Replace occurrences of pattern in string
+regexprep(email_contents, '[$]+', 'dollar')
+
 #Tokenization
-strtok(str, delemiters) #parses str from left to right, treats each character in delimiters as a separate delimiter 
+[str, email_contents] = strtok(email_contents, delemiters) 
+#parses str from left to right, treats each character in delimiters as a separate delimiter 
+
 regexprep(str, '[^a-zA-Z0-9]', '') #Remove any non alphanumeric characters
 
 # vocabList
 strcmp() # compare text then add word indices if in list
 # construct feature vectors
+x.len = vocabList.len, if word indeces, then x[indice]=1
 # SVMTrain
+# gaussian kernel sim = exp( -sum((x1-x2).^2)/(2*sigma*sigma));
+
+model = svmTrain(X, y, C, @linearKernel);
+p = svmPredict(model, X);# training error
+p = svmPredict(model, Xtest); # testing error
+
+# top predictors
+[weight, idx] = sort(model.w, 'descend');
