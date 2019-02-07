@@ -87,26 +87,5 @@ def em_gmm_orig(xs,pis,mus,sigmas, tol = 0.01, max_iter = 100):
 
 
 
-def faction(z):
-    z = sorted(z)
-    while len(z)>2:
-        r = fight(z[-2],z[-1])
-        z.pop()
-        z.pop()
-        if r:
-            for i in range(len(z)):
-                if z[i]> r:
-                    z.insert(i,r)
-                    break
-    if len(z)==2:
-        return z[1]-z[0]
-    if len(z)==1:
-        return z[0]
-    
-                   
-def fight(i,j):
-    if i==j:
-        return 0
-    elif j>i:
-        return j-i
+
             
