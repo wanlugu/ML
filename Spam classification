@@ -6,13 +6,22 @@ regexprep(email_contents, '[$]+', 'dollar')
 #Tokenization
 [str, email_contents] = strtok(email_contents, delemiters) 
 #parses str from left to right, treats each character in delimiters as a separate delimiter 
-
 regexprep(str, '[^a-zA-Z0-9]', '') #Remove any non alphanumeric characters
+# stemming: discounted, discouting to discount
+nltk.stem.porter
+porterStemmer(string) in Matlab
+sses to ss, ies to i
+ed, ion, ing, ment, s remove
+
+
 
 # vocabList
 strcmp() # compare text then add word indices if in list
 # construct feature vectors
 x.len = vocabList.len, if word indeces, then x[indice]=1
+
+
+
 # SVMTrain
 # gaussian kernel sim = exp( -sum((x1-x2).^2)/(2*sigma*sigma));
 
