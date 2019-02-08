@@ -6,5 +6,43 @@ noise has beed added to q_m with \epsilon to generate noised point r_m
 Then, distirbution  
 1.  r_s|p_i,p_f,t_s,\Sigma ~ N(q_s, \Sigma), q_s = q_i +(q_f-q_i)t_s
 Additionally add noise to 3D line,
-2.  p_i,p_f~N(\mu_1,\Sigma_1)
+2.  p_i,p_f~N(\mu_1,\Sigma_1 )
 Use 1.2. to generate 3D line
+f(p_i,p_f|r_s, t_s,\Sigma,\mu_1,\Sigma_1) ~ f( r_s|p_i,p_f,t_s,\Sigma) f(p_i,p_f|\mu_1,\Sigma_1 )
+####################################################
+import t and r 
+### generae random initial p_i, p_f  
+pi, pf = np.random.multivariate_normal(mu_1, sigma_1, 2)
+
+### initial 2D according to M and t
+qi, qf = [0] * 2
+pa = np.append(pi, 1)
+pb = np.append(pf, 1)
+# (u~,v~,w~)=M.(p,1)
+xi = M.dot(pa)
+xf = M.dot(pb)
+# (u,v)=1/w~(u~,v~)
+xi = xi / xi[2]
+xf = xf / xf[2]
+# endpoint of 2D lines
+qi = xi[0:2]
+qf = xf[0:2]
+
+### generate qs according to t and qi qf
+### log prior
+prior = multivariate_normal.logpdf([pi, pf], mean=mu_1, cov=sigma_1)
+### log likelihood of r ~(qs, sigma)
+likelihood[j] = multivariate_normal.logpdf(r[j], mean=qs[j], cov=sigma)
+
+### old log posterior, which is the interested distribution
+p_old = np.sum(prior) + np.sum(likelihood)
+
+### Generate new samples, which is repeat part
+### use pi, pf to generate new pi pf
+### then qi, qf, qs, log prior, log likelihood, p_new
+### acceptance check
+u = np.random.uniform(0.0, 1.0, 1)
+if (np.log(u) < p_new - p_old): # u< ratio
+    accept parameter_new
+     
+                
