@@ -1,0 +1,9 @@
+# xi (p*1) the score of movie i based on some rules
+# theta_j (p*1) the rate of person j based on rules
+# the rate of movie i is theta_j' xi
+# the true rate is y_{i,j}
+given theta, estimate xi
+given xi, estimate theta
+
+J(x1,...,x_{n_m}, theta_1,..., theta_{n_u}) = 1/2 \sum_{r_ij=1} (theta_j' xi - y_{ij})^2 
++ \lambda/2 sum_{i=1,n_m} sum_{k=1,p} ( x_{i}^k )^2 + \lambda/2 sum_{j=1, n_i} sum_{k=1,p} ( theta_j^k )^2
