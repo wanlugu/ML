@@ -1,0 +1,5 @@
+#detect anomalous behavior in server 
+# feature: throughput (mb/s) and latency (ms) of response of each server
+do not have label
+fit with gaussian, estimate parameter of features
+mu = 1/m sum xi, sigma = 1/m (xi - mu_i)^2
