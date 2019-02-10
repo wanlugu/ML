@@ -1,0 +1,20 @@
+# RGB encoding, 8 bits (0-255) represents one color
+# orginal 128*128 locations time 24 bit
+A = double(imread('bird_small.png'));
+A = A / 255;
+X = reshape(A, img_size(1) * img_size(2), 3);
+
+
+# random Initialization
+# random reorder X, choose first K as initial centroids
+# find closest centroid 
+c(i) = j that minimzie |x(i)-mu(j)|^2
+# compute mean
+mu_k = 1/n_k \sum xi \in C_k
+# Image can be represented as K colors rather than original 
+# 16*24 + 128*128*4
+K colors are the mean of the final K clusters (not K centroids)
+
+X_recovered = centroids(idx,:);
+% Reshape the recovered image into proper dimensions
+X_recovered = reshape(X_recovered, img_size(1), img_size(2), 3);
