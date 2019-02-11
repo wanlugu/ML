@@ -3,3 +3,15 @@
 do not have label
 fit with gaussian, estimate parameter of features
 mu = 1/m sum xi, sigma = 1/m (xi - mu_i)^2
+
+# Then use estimated gaussian model to generate probability for CV data sets
+# choose epsilon from a list to check F1 score
+# prediction = pval < epsilon
+
+# TP = correctly classified as anomaly= prediction (prediction ==1 & yval ==1).count
+# FP = wrongly classified as anomaly = prediction (prediction ==1 & yval ==0).count
+# FN = wrongly classified as normal = prediction(prediction ==0 & yval ==1).count
+# TN = correcly classified as normal= prediction(prediction ==0 & yval ==0).count
+predicision = TP/(TP+FP)
+recall = TP/(TP+FN)
+F1 = 2pre*rec/(pre+rec)
