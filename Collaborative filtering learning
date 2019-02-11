@@ -7,3 +7,25 @@ given xi, estimate theta
 
 J(x1,...,x_{n_m}, theta_1,..., theta_{n_u}) = 1/2 \sum_{r_ij=1} (theta_j' xi - y_{ij})^2 
 + \lambda/2 sum_{i=1,n_m} sum_{k=1,p} ( x_{i}^k )^2 + \lambda/2 sum_{j=1, n_i} sum_{k=1,p} ( theta_j^k )^2
+
+
+Movie scores X_{n*p}
+User rates rule theta_{m*p}
+Y = X*theta' is n*m
+R is also n*m
+
+#Given Y and R, generate J and gradient for X and theta
+%  Normalize Ratings
+[Ynorm, Ymean] = normalizeRatings(Y, R);
+# get X and Theta
+lambda = 10;
+[X; Theta] = fmincg (@(t)(cofiCostFunc(t, Ynorm, R, num_users, num_movies, ...
+                                num_features, lambda)), ...
+                initial_parameters, options);
+                
+# Use estimated X, Theta to generate p
+p = X*Theta'
+my_predictions = p(:,1) + Ymean;
+
+# make recommendations 
+[r, ix] = sort(my_predictions, 'descend');
