@@ -24,7 +24,9 @@ lambda = 10;
                 initial_parameters, options);
                 
 # Use estimated X, Theta to generate p
+# p is the normalized rate of all movies from all users
 p = X*Theta'
+# assuming you are user 1
 my_predictions = p(:,1) + Ymean;
 
 # make recommendations 
