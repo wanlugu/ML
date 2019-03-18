@@ -1,0 +1,35 @@
+from sklearn.datasets import load_iris
+from sklearn import tree
+
+# Load in our dataset
+iris_data = load_iris()
+
+# Initialize our decision tree object
+classification_tree = tree.DecisionTreeClassifier()
+
+# Train our decision tree (tree induction + pruning)
+classification_tree = classification_tree.fit(iris_data.data, iris_data.target)
+
+
+## plot of the tree
+import graphviz 
+dot_data = tree.export_graphviz(classification_tree, out_file=None, 
+                     feature_names=iris.feature_names,  
+                     class_names=iris.target_names,  
+                     filled=True, rounded=True,  
+                     special_characters=True)  
+graph = graphviz.Source(dot_data)  
+graph.render("iris") 
+
+
+Pros
+Easy to understand and interpret. 
+Require very little data preparation. 
+The cost of using the tree for inference is logarithmic in the number of data points used to train the tree. 
+
+Overfitting is quite common with decision trees simply due to the nature of their training. 
+It’s often recommended to perform some type of dimensionality reduction such as PCA so that the tree doesn’t have to 
+learn splits on so many features
+For similar reasons as the case of overfitting, decision trees are also vulnerable to becoming biased to the classes 
+that have a majority in the dataset. It’s always a good idea to do some kind of class balancing such as class weights, 
+sampling, or a specialised loss function.
