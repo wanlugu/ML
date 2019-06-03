@@ -1,5 +1,12 @@
 
-AI has tools such as 
-ML: A to B, running AI system, a field that gives the computer the ability to learn (often result in a software)
-DS: get insight to help making business decisions, (often output a slide deck)
-DL
+AI has tools such as ML, DS, deep learning
+
+Machine Learning
+Concept: A to B, running AI system, a field that gives the computer the ability to learn (often result in a software)
+Framework: collect data, train model (iterate until good enough), deploy model (get data back, maintain/update model)
+
+Data Science
+Concept: get insight to help making business decisions, (often output a slide deck)
+Framework: collect data, analyze data (iterate unitil good), suggest hypothesis/actions (deploy changes, re-analyze new data periodically)
+
+Deep learning: commonly used
