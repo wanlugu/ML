@@ -1,12 +1,18 @@
 
 AI has tools such as ML, DS, deep learning
-
-Machine Learning
+1.Machine Learning
 Concept: A to B, running AI system, a field that gives the computer the ability to learn (often result in a software)
 Framework: collect data, train model (iterate until good enough), deploy model (get data back, maintain/update model)
-
-Data Science
+2. Data Science
 Concept: get insight to help making business decisions, (often output a slide deck)
 Framework: collect data, analyze data (iterate unitil good), suggest hypothesis/actions (deploy changes, re-analyze new data periodically)
+3. Deep learning: commonly used
 
-Deep learning: commonly used
+Choose an AI project: what AI can do (AI experts) intersects with values in your domain (domain experts)
+brainstorm framework:
+1. think about aumating tasks and choose from the tasks
+2. what are the main drivers of business value
+3. What are the main pain of the business
+4. you can make progress without big data
+
+Check if the project is worthwhile: due diligence on project
