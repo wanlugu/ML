@@ -18,3 +18,8 @@ brainstorm framework:
 Check if the project is worthwhile: due diligence on project
 technical diligence (doable): can AI meet desired performance, how much data is needed, engineering timeline
 business diligence: reduce cost, increase revenue, create new product
+
+Work with AI team by providing: goal, data set to measure their performance (test set)
+Tools needed
+Machine learning framework: Tensorflow, PyTorch, Keras, MXNet, CNTK, Caffe, PaddlePaddle, Scikit-learn, R, Weka
+ Edge deployment: making decision immediately in the processor
