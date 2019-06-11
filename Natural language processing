@@ -3,10 +3,13 @@
 Regular expression
 Context-free grammars
 2. Probabilistic modeling and machine learning
+Semantic slot filling: CRF-conditional random field
 3. Deep learning
-
+Semantic slot filling: CRF-conditional random field: LSTM
 /*          Linguistic Knowledge              */
 morphology形态学: study of words, part of word such as stems, rood words, preffixes, surffixes
 syntax句法: relationship between words
 semantics语义: synthetics structures, about the meaning
 pragmatics语用学: highest level
+Tools: 
+NLTK (Natural Language Toolkit in python), stanford parser (sythentic analysis),library spaCy, Genism and MALLET for higher level
