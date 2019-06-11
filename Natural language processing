@@ -1,6 +1,12 @@
-Main approaches
+/*           Main approaches              */
 1. Rule-based method (manually, time consuming but accurate)
 Regular expression
 Context-free grammars
 2. Probabilistic modeling and machine learning
 3. Deep learning
+
+/*          Linguistic Knowledge              */
+morphology形态学: study of words, part of word such as stems, rood words, preffixes, surffixes
+syntax句法: relationship between words
+semantics语义: synthetics structures, about the meaning
+pragmatics语用学: highest level
