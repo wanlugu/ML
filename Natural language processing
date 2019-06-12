@@ -13,3 +13,16 @@ semantics语义: synthetics structures, about the meaning
 pragmatics语用学: highest level
 Tools: 
 NLTK (Natural Language Toolkit in python), stanford parser (sythentic analysis),library spaCy, Genism and MALLET for higher level
+/*          Text classification             */
+Preprocessing: 
+1. tokenization (useful unit for semantic processing)
+nltk.tokenize.WhitespaceTokenizer()
+nltk.tokenize.TreebankWordTokenizer()
+nltk.tokenize.WordPunctTokenizer()  
+2.1 stemming (get root form of word)
+Porter's stemmer, nltk.stem.PorterStemmer
+2.2 lemmatization (get original or dictionary form of word)
+WordNet lemmatizer, nltk.stem.WordNetLemmatizer
+3. Further normalize
+normalize captical letters (in the beginning of a sentence, in title)
+Acronyms
