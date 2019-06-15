@@ -26,3 +26,18 @@ WordNet lemmatizer, nltk.stem.WordNetLemmatizer
 3. Further normalize
 normalize captical letters (in the beginning of a sentence, in title)
 Acronyms
+
+Feature exaction:
+Token to features 
+1. Bag of words, each token has a text vectorization (lose order), which is the counts of each token
+2. n-grams for token (token pairs or triples, etc.) and remove n-grams 
+remove high frequency n-grams (a, the, and, etc.)
+remove low frequency n-grams, otherwise overfit 
+keep median frequency n-grams
+3. rank n-grams
+smaller frequency n-grams more discriminating
+Term frequency (TF) frequency of term t in document d
+Inverse document frequency (IDF) documents contain term t in all documents set
+TF-IDF=TF*IDF
+4. better BOW by replace count by TF-IDF/l2 norm
+week1/tfidf_demo.ipynb 
