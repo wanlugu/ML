@@ -18,12 +18,13 @@ Preprocessing:
 1. tokenization (useful unit for semantic processing)
 nltk.tokenize.WhitespaceTokenizer()
 nltk.tokenize.TreebankWordTokenizer()
-nltk.tokenize.WordPunctTokenizer()  
+nltk.tokenize.WordPunctTokenizer()
+2. normalization
 2.1 stemming (get root form of word)
-Porter's stemmer, nltk.stem.PorterStemmer
+Porter's stemmer, nltk.stem.PorterStemm
 2.2 lemmatization (get original or dictionary form of word)
 WordNet lemmatizer, nltk.stem.WordNetLemmatizer
-3. Further normalize
+2.3 Further normalize
 normalize captical letters (in the beginning of a sentence, in title)
 Acronyms
 
@@ -41,3 +42,9 @@ Inverse document frequency (IDF) documents contain term t in all documents set
 TF-IDF=TF*IDF
 4. better BOW by replace count by TF-IDF/l2 norm
 week1/tfidf_demo.ipynb 
+
+
+
+Linear model:
+Logistic regression: handle sparsity, fast to train, weights can be interpreted
+Make it better: try tokenization, normalization, try different model, or throw away Bag of Word and use NN
