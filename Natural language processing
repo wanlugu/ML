@@ -53,3 +53,9 @@ small dataset: store n-gram feature index in hash table
 large dataset: out of memory, hard to synchronize
 n-grams --> f0(token)=hash(n gram token) %2^b 
 can add personize function: fu(user+'_'+token) % 2^b
+
+
+/*           Neural Networks for words                */
+Word2vec word embedding transfer a word to a vector of length n
+convolutional filter which dot multiply the word embedding pairs gives out a result
+It is better than BOW of n grams, because a good convolutional filter can get higher meaning of different words to similar value.
