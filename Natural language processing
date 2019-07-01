@@ -57,5 +57,12 @@ can add personize function: fu(user+'_'+token) % 2^b
 
 /*           Neural Networks for words                */
 Word2vec word embedding transfer a word to a vector of length n
-convolutional filter which dot multiply the word embedding pairs gives out a result
+A convolutional filter (dim 2*n) of size 2 dot multiply the word embedding pairs (dim 2*n) gives out a result
 It is better than BOW of n grams, because a good convolutional filter can get higher meaning of different words to similar value.
+1D convolution (slide window only in one direction) outputs same length with input, so choose the maximum as activation, maximum 
+pulling over time
+Application: 3,4,5 gram-window with 100 filter each, then get 300 features in one vector, then do further multilayer perceptron (MLP)
+GOAL: get fixed number of features with dynamic length of text and capture the meanings in the text
+
+/*           Neural Networks for characters                */
+transfer words to sparse vector of fixed length
