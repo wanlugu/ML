@@ -65,4 +65,6 @@ Application: 3,4,5 gram-window with 100 filter each, then get 300 features in on
 GOAL: get fixed number of features with dynamic length of text and capture the meanings in the text
 
 /*           Neural Networks for characters                */
-transfer words to sparse vector of fixed length
+1D convolution on character: transfer character to sparse vector of fixed length, then try different filters to get vector with 
+same length (num of characters) with text, then max pooling (choose maximum every two character)
+Repeat 1D convolution and pooling 
