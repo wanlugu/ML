@@ -1,4 +1,4 @@
-/*           Main approaches              */
+/***          Intro and Main approaches              ***/
 1. Rule-based method (manually, time consuming but accurate)
 Regular expression
 Context-free grammars
@@ -6,14 +6,14 @@ Context-free grammars
 Semantic slot filling: CRF-conditional random field
 3. Deep learning
 Semantic slot filling: CRF-conditional random field: LSTM
-/*          Linguistic Knowledge              */
+/*   Linguistic Knowledge  */
 morphology形态学: study of words, part of word such as stems, rood words, preffixes, surffixes
 syntax句法: relationship between words
 semantics语义: synthetics structures, about the meaning
 pragmatics语用学: highest level
 Tools: 
 NLTK (Natural Language Toolkit in python), stanford parser (sythentic analysis),library spaCy, Genism and MALLET for higher level
-/*          Text classification             */
+/***          Text classification             ***/
 Preprocessing: 
 1. tokenization (useful unit for semantic processing)
 nltk.tokenize.WhitespaceTokenizer()
@@ -28,7 +28,7 @@ WordNet lemmatizer, nltk.stem.WordNetLemmatizer
 normalize captical letters (in the beginning of a sentence, in title)
 Acronyms
 
-/*                  Feature exaction                 */
+/*   Feature exaction   */
 Token to features, each document has a list of features
 1. Bag of words, each token has a text vectorization (lose order), which is the counts of each token
 2. n-grams for token (token pairs or triples, etc.) and remove n-grams 
@@ -44,18 +44,18 @@ TF-IDF=TF*IDF
 week1/tfidf_demo.ipynb 
 
 
-/*          Linear model for sentiment analysis               */
+/*    Linear model for sentiment analysis    */
 Logistic regression: handle sparsity, fast to train, weights can be interpreted
 Make it better: try tokenization, normalization, try different model, or throw away Bag of Word and use NN
 
-/*          Hash trick in spam filtering                    */
+/*    Hash trick in spam filtering    */
 small dataset: store n-gram feature index in hash table
 large dataset: out of memory, hard to synchronize
 n-grams --> f0(token)=hash(n gram token) %2^b 
 can add personize function: fu(user+'_'+token) % 2^b
 
 
-/*           Neural Networks for words                */
+/***           Neural Networks for words                ***/
 Word2vec word embedding transfer a word to a vector of length n
 A convolutional filter (dim 2*n) of size 2 dot multiply the word embedding pairs (dim 2*n) gives out a result
 It is better than BOW of n grams, because a good convolutional filter can get higher meaning of different words to similar value.
@@ -64,7 +64,7 @@ pulling over time
 Application: 3,4,5 gram-window with 100 filter each, then get 300 features in one vector, then do further multilayer perceptron (MLP)
 GOAL: get fixed number of features with dynamic length of text and capture the meanings in the text
 
-/*           Neural Networks for characters                */
+/*   Neural Networks for characters   */
 1D convolution on character: transfer character to sparse vector of fixed length, then try different filters to get vector with 
 same length (num of characters) with text, then max pooling (choose maximum every two character)
 Repeat 1D convolution and pooling 
