@@ -1,4 +1,4 @@
-/***          Intro and Main approaches              ***/
+/*********************          Intro and Main approaches      ******************/
 1. Rule-based method (manually, time consuming but accurate)
 Regular expression
 Context-free grammars
@@ -13,7 +13,7 @@ semantics语义: synthetics structures, about the meaning
 pragmatics语用学: highest level
 Tools: 
 NLTK (Natural Language Toolkit in python), stanford parser (sythentic analysis),library spaCy, Genism and MALLET for higher level
-/***          Text classification             ***/
+/*********************      Text classification      *********************/
 Preprocessing: 
 1. tokenization (useful unit for semantic processing)
 nltk.tokenize.WhitespaceTokenizer()
@@ -55,7 +55,7 @@ n-grams --> f0(token)=hash(n gram token) %2^b
 can add personize function: fu(user+'_'+token) % 2^b
 
 
-/***           Neural Networks for words                ***/
+*********************        Neural Networks for words        *********************/
 Word2vec word embedding transfer a word to a vector of length n
 A convolutional filter (dim 2*n) of size 2 dot multiply the word embedding pairs (dim 2*n) gives out a result
 It is better than BOW of n grams, because a good convolutional filter can get higher meaning of different words to similar value.
