@@ -68,3 +68,13 @@ GOAL: get fixed number of features with dynamic length of text and capture the m
 1D convolution on character: transfer character to sparse vector of fixed length, then try different filters to get vector with 
 same length (num of characters) with text, then max pooling (choose maximum every two character)
 Repeat 1D convolution and pooling 
+
+
+
+*********************        Language Model        *********************/
+Applications: message suggestion, spelling correction, machine translation, speech recognition
+P(Jack|that) = c(that jack)/c(that)
+probability of whole sequence with markov assumption: 
+P(w1w2w3...) = P(w1)P(w2|w1)....P(wk|w_{k-n+1},...,w_{k-1}), only depends on previous k words
+The sum of sequence of same length can be 1.
+
