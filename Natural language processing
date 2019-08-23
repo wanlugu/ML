@@ -75,6 +75,10 @@ Repeat 1D convolution and pooling
 Applications: message suggestion, spelling correction, machine translation, speech recognition
 P(Jack|that) = c(that jack)/c(that)
 probability of whole sequence with markov assumption: 
-P(w1w2w3...) = P(w1)P(w2|w1)....P(wk|w_{k-n+1},...,w_{k-1}), only depends on previous k words
+P(w1w2w3...) = P(w1)P(w2|w1)....P(wk|w_{k-n+1},...,w_{k-1}), only depends on previous n-1 words, n-gram language model
 The sum of sequence of same length can be 1.
 
+Bigram, 1-gram, 3-gram, 4-gram, etc. decide n based on how much data sets you have, n is the length of test corpus.
+Extrinsic evaluation: the quality of machine translation, etc. time consuming
+Intrinsic evaluation: hold-out perplexity (train and test)
+Perplexity = P(w_test)^(-1/N) similar to entropy, as low as better
