@@ -84,3 +84,5 @@ Extrinsic evaluation: the quality of machine translation, etc. time consuming
 Intrinsic evaluation: hold-out perplexity (train and test)
 Perplexity = P(w_test)^(-1/N) similar to entropy, as low as better
 Problem: if gram not appeared in the train, the perplexity =0
+Solution: various smoothing methods from add-K-smoothing to Kneser-ney smoothing, 
+            N-gram + Kneser-ney is a strong baseline in language model !
