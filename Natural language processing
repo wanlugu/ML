@@ -76,7 +76,8 @@ Applications: message suggestion, spelling correction, machine translation, spee
 /*  N-gram Language Model   */
 P(Jack|that) = c(that jack)/c(that), get the conditional prob
 probability of whole sequence with markov assumption: 
-P(w1w2w3...) = P(w1)P(w2|w1)....P(wk|w_{k-n+1},...,w_{k-1}), only depends on previous n-1 words, n-gram language model
+P(w1w2w3...) = P(w1|start)P(w2|w1)....P(wk|w_{k-n+1},...,w_{k-1})P(end|wk,...), 
+only depends on previous n-1 words, need fake start/end tokens
 The sum of sequence of same length can be 1.
 
 Bigram, 1-gram, 3-gram, 4-gram, etc. decide n based on how much data sets you have, n is the length of test corpus.
