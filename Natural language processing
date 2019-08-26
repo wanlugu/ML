@@ -90,3 +90,4 @@ Perplexity = P(w_test)^(-1/N) similar to entropy, as low as better
 
 /*  Sequence tagging with probabilistic models  */
 examples of sequence labling: part of speech tagging (PoS tags), named entity recognition (地名，人名，日期等识别)
+PoS tagging using HMM: input x, tags y, p(x,y) = p(x|y)p(y)
