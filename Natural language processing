@@ -43,7 +43,6 @@ TF-IDF=TF*IDF
 4. better BOW by replace count by TF-IDF/l2 norm
 week1/tfidf_demo.ipynb 
 
-
 /*    Linear model for sentiment analysis    */
 Logistic regression: handle sparsity, fast to train, weights can be interpreted
 Make it better: try tokenization, normalization, try different model, or throw away Bag of Word and use NN
@@ -73,6 +72,7 @@ Repeat 1D convolution and pooling
 
 /*********************        Language Model        *********************/
 Applications: message suggestion, spelling correction, machine translation, speech recognition
+
 /*  N-gram Language Model   */
 P(Jack|that) = c(that jack)/c(that), get the conditional prob
 probability of whole sequence with markov assumption: 
@@ -84,6 +84,9 @@ Bigram, 1-gram, 3-gram, 4-gram, etc. decide n based on how much data sets you ha
 Extrinsic evaluation: the quality of machine translation, etc. time consuming
 Intrinsic evaluation: hold-out perplexity (train and test)
 Perplexity = P(w_test)^(-1/N) similar to entropy, as low as better
-Problem: if gram not appeared in the train, the perplexity =0
-Solution: various smoothing methods from add-K-smoothing to Kneser-ney smoothing, 
-            N-gram + Kneser-ney is a strong baseline in language model !
+           Problem: if gram not appeared in the train, the perplexity =0
+           Solution: various smoothing methods from add-K-smoothing to Kneser-ney smoothing, 
+                         N-gram + Kneser-ney is a strong baseline in language model !
+
+/*  Sequence tagging with probabilistic models  */
+examples of sequence labling: part of speech tagging (PoS tags), named entity recognition (地名，人名，日期等识别)
